@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "phantomdreamcatcher:block/dreamcatcher_block"
+    }
+  }
+}

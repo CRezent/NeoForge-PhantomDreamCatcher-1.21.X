@@ -1,5 +1,6 @@
 package com.crezent.phantomdreamcatcher;
 
+import com.crezent.phantomdreamcatcher.block.ModBlocks;
 import com.crezent.phantomdreamcatcher.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -72,8 +73,10 @@ public class PhantomDreamCatcher {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -95,6 +98,9 @@ public class PhantomDreamCatcher {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.DREAMCATCHER);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.DREAMCATCHER_BLOCK);
         }
     }
 

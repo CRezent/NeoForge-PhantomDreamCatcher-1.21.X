@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "phantomdreamcatcher:block/dreamcatcher_block"
+  }
+}
